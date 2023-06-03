@@ -2,7 +2,7 @@ from insan import insan
 from issiz import issiz
 from calisan import calisan
 from maviyaka import maviyaka
-#from beyazyaka import beyazyaka
+from beyazyaka import beyazyaka
 #import pandas as pd
 
 #insan
@@ -41,9 +41,9 @@ print(calisan2)
 print(calisan3)
 
 #maviyaka
-maviyaka1 = maviyaka("174812752", "Emir", "Şahin", 35, "Erkek", "Mavi Yakalı", "Türk", 36, 14500, 0.2)
-maviyaka2 = maviyaka("674189283", "Cemile", "Lale", 28, "Kadın", "Mavi Yakalı", "Türk", 21, 12000, 0.5)
-maviyaka3 = maviyaka("127481920", "Servet", "Sayar", 42, "Erkek", "Mavi Yakalı", "Türk", 51, 18000, 0.3)
+maviyaka1 = maviyaka("17481275232", "Emir", "Şahin", 35, "Erkek", "Mavi Yakalı", "Türk", 36, 14500, 0.2)
+maviyaka2 = maviyaka("67418928364", "Cemile", "Lale", 28, "Kadın", "Mavi Yakalı", "Türk", 21, 12000, 0.5)
+maviyaka3 = maviyaka("12748192012", "Servet", "Sayar", 42, "Erkek", "Mavi Yakalı", "Türk", 51, 18000, 0.3)
 
 maviyaka1.zam_hakki()
 maviyaka2.zam_hakki()
@@ -52,3 +52,16 @@ maviyaka3.zam_hakki()
 print(maviyaka1)
 print(maviyaka2)
 print(maviyaka3)
+
+#beyazyaka
+beyazyaka1 = beyazyaka("15648520522", "Elif", "Kılıç", 33, "Kadın", "Beyaz Yakalı", "Türk", 21, 12200, 2500)
+beyazyaka2 = beyazyaka("56176379112", "Mert", "Demir", 39, "Erkek", "Beyaz Yakalı", "Türk", 35, 14700, 500)
+beyazyaka3 = beyazyaka("61426731232", "Emine", "Aksoy", 26, "Kadın", "Beyaz Yakalı", "Türk", 61, 22320, 3000)
+
+beyazyaka1.zam_hakki()
+beyazyaka2.zam_hakki()
+beyazyaka3.zam_hakki()
+
+print(beyazyaka1)
+print(beyazyaka2)
+print(beyazyaka3)

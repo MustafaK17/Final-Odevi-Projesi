@@ -36,4 +36,4 @@ class maviyaka(calisan):
             zamli_maas = int(self.maas + zam_miktari)
             return f"Kimlik No: {self.tc_no}, Ad: {self.ad}, Soyad: {self.soyad}, Yaş: {self.yas}, Cinsiyet: {self.cinsiyet}, Uyruk: {self.uyruk}, Statü: {self.statu}, Tecrübe: {self.tecrube} ay, Maaş: {self.maas} > {zamli_maas}, Yıpranma Payı: {self.yipranma_payi}"
         else:
-            return f"Kimlik No: {self.tc_no}, Ad: {self.ad}, Soyad: {self.soyad}, Yaş: {self.yas}, Cinsiyet: {self.cinsiyet}, Uyruk: {self.uyruk}, Statü: {self.statu}, Tecrübe: {self.tecrube} ay, Maaş: {self.maas} > Hatalı değerler!, Yıpranma Payı: {self.yipranma_payi}"
+            return f"Kimlik No: {self.tc_no}, Ad: {self.ad}, Soyad: {self.soyad}, Yaş: {self.yas}, Cinsiyet: {self.cinsiyet}, Uyruk: {self.uyruk}, Statü: {self.statu}, Tecrübe: {self.tecrube} ay, Maaş: {self.maas}, Yıpranma Payı: {self.yipranma_payi}"

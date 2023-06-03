@@ -48,4 +48,4 @@ class calisan(insan):
             zamli_maas = int(self.maas + zam_miktari)
             return f"Kimlik No: {self.tc_no}, Ad: {self.ad}, Soyad: {self.soyad}, Yaş: {self.yas}, Cinsiyet: {self.cinsiyet}, Uyruk: {self.uyruk}, Sektor: {self.sektor}, Tecrübe: {self.tecrube} ay, Maaş: {self.maas} > {zamli_maas}"
         else:
-            return f"Kimlik No: {self.tc_no}, Ad: {self.ad}, Soyad: {self.soyad}, Yaş: {self.yas}, Cinsiyet: {self.cinsiyet}, Uyruk: {self.uyruk}, Sektor: {self.sektor}, Tecrübe: {self.tecrube} ay, Maaş: {self.maas} > Hatalı değerler!"
+            return f"Kimlik No: {self.tc_no}, Ad: {self.ad}, Soyad: {self.soyad}, Yaş: {self.yas}, Cinsiyet: {self.cinsiyet}, Uyruk: {self.uyruk}, Sektor: {self.sektor}, Tecrübe: {self.tecrube} ay, Maaş: {self.maas}"
