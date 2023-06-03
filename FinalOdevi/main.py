@@ -1,16 +1,18 @@
 from insan import insan
 from issiz import issiz
-#from calisan import calisan
+from calisan import calisan
 #from maviyaka import maviyaka
 #from beyazyaka import beyazyaka
 #import pandas as pd
 
+#insan
 insan1 = insan("11223344556", "Kerem", "Yılmaz", 30, "Erkek", "Türk")
 insan2 = insan("12312312345", "Selin", "Kaya", 27, "Kadın", "Türk")
 
 print(insan1)
 print(insan2)
 
+#issiz
 gecmis_tecrubeler_1 = {"Mavi Yakalı": 4, "Beyaz Yakalı": 7, "Yönetici": 2}
 issiz_1 = issiz("12121314156", "Ali", "Demir", 34, "Erkek", "Türk", gecmis_tecrubeler_1)
 
@@ -24,3 +26,16 @@ issizler = [issiz_1, issiz_2, issiz_3]
 
 for issiz in issizler:
     print(f"{issiz}")
+
+#çalışan
+calisan1 = calisan("16154181231", "Can", "Öztürk", 27, "Kadın", "Türk", "Teknoloji", 22, 18000)
+calisan2 = calisan("98723622108", "Kemal", "Akgün", 32, "Erkek", "Türk", "Muhasebe", 38, 14880)
+calisan3 = calisan("45820161234", "Nazlı", "Yıldırım", 35, "Kadın", "Türk", "İnşaat", 68, 23450)
+
+calisan1.zam_hakki()
+calisan2.zam_hakki()
+calisan3.zam_hakki()
+
+print(calisan1)
+print(calisan2)
+print(calisan3)
