@@ -34,6 +34,6 @@ class maviyaka(calisan):
         zam_miktari = self.zam_hakki()
         if zam_miktari is not None:
             zamli_maas = int(self.maas + zam_miktari)
-            return f"Kimlik No: {self.tc_no}, Ad: {self.ad}, Soyad: {self.soyad}, Yaş: {self.yas}, Cinsiyet: {self.cinsiyet}, Uyruk: {self.uyruk}, Statü: {self.statu}, Tecrübe: {self.tecrube} ay, Maaş: {self.maas} > {zamli_maas}, Yıpranma Payı: {self.yipranma_payi}"
+            return f"Ad: {self.ad}, Soyad: {self.soyad}, Tecrübe: {self.tecrube} ay, Maaş: {self.maas} > {zamli_maas}"
         else:
-            return f"Kimlik No: {self.tc_no}, Ad: {self.ad}, Soyad: {self.soyad}, Yaş: {self.yas}, Cinsiyet: {self.cinsiyet}, Uyruk: {self.uyruk}, Statü: {self.statu}, Tecrübe: {self.tecrube} ay, Maaş: {self.maas}, Yıpranma Payı: {self.yipranma_payi}"
+            return f"Ad: {self.ad}, Soyad: {self.soyad}, Tecrübe: {self.tecrube} ay, Maaş: {self.maas}"
