@@ -3,7 +3,7 @@ from issiz import issiz
 from calisan import calisan
 from maviyaka import maviyaka
 from beyazyaka import beyazyaka
-#import pandas as pd
+import pandas as pd
 
 #insan
 insan1 = insan("11223344556", "Kerem", "Yılmaz", 30, "Erkek", "Türk")

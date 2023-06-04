@@ -32,6 +32,6 @@ class beyazyaka(calisan):
         zam_miktari = self.zam_hakki()
         if zam_miktari is not None:
             yeni_maas = int(self.maas + zam_miktari)
-            return f"Ad: {self.ad}, Soyad: {self.soyad}, Tecrübe: {self.tecrube} ay,  Maaş: {self.maas}>{yeni_maas}"
+            return f"Ad: {self.ad}, Soyad: {self.soyad}, Tecrübe: {self.tecrube} ay,  Maaş: {yeni_maas}"
         else:
             return f"Ad: {self.ad}, Soyad: {self.soyad}, Tecrübe: {self.tecrube} ay,  Maaş: {self.maas}"

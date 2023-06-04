@@ -12,4 +12,4 @@ class issiz(insan):
         return uygun_statu
 
     def __str__(self):
-        return f"Ad:{self.ad}, Soyad:{self.soyad}, Uygun Statü: {self.statu_bul()}"
+        return f"Ad: {self.ad}, Soyad: {self.soyad}, Uygun Statü: {self.statu_bul()}"

@@ -46,6 +46,6 @@ class calisan(insan):
         zam_miktari = self.zam_hakki()
         if zam_miktari is not None:
             zamli_maas = int(self.maas + zam_miktari)
-            return f" Ad: {self.ad}, Soyad: {self.soyad}, Tecrübe: {self.tecrube} ay, Maaş: {self.maas} > {zamli_maas}"
+            return f"Ad: {self.ad}, Soyad: {self.soyad}, Tecrübe: {self.tecrube} ay, Maaş: {zamli_maas}"
         else:
-            return f" Ad: {self.ad}, Soyad: {self.soyad}, Tecrübe: {self.tecrube} ay, Maaş: {self.maas}"
+            return f"Ad: {self.ad}, Soyad: {self.soyad}, Tecrübe: {self.tecrube} ay, Maaş: {self.maas}"
