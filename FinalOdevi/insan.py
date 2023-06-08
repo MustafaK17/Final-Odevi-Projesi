@@ -1,47 +1,47 @@
 class insan:
     def __init__(self, tc_no, ad, soyad, yas, cinsiyet, uyruk):
-        self.tc_no = tc_no
-        self.ad = ad
-        self.soyad = soyad
-        self.yas = yas
-        self.cinsiyet = cinsiyet
-        self.uyruk = uyruk
+        self.__tc_no = tc_no
+        self.__ad = ad
+        self.__soyad = soyad
+        self.__yas = yas
+        self.__cinsiyet = cinsiyet
+        self.__uyruk = uyruk
 
     def get_tc_no(self):
-        return self.tc_no
+        return self.__tc_no
 
     def set_tc_no(self, tc_no):
-        self.tc_no = tc_no
+        self.__tc_no = tc_no
 
     def get_ad(self):
-        return self.ad
+        return self.__ad
 
     def set_ad(self, ad):
-        self.ad = ad
+        self.__ad = ad
 
     def get_soyad(self):
-        return self.soyad
+        return self.__soyad
 
     def set_soyad(self, soyad):
-        self.soyad = soyad
+        self.__soyad = soyad
 
     def get_yas(self):
-        return self.yas
+        return self.__yas
 
     def set_yas(self, yas):
-        self.yas = yas
+        self.__yas = yas
 
     def get_cinsiyet(self):
-        return self.cinsiyet
+        return self.__cinsiyet
 
     def set_cinsiyet(self, cinsiyet):
-        self.cinsiyet = cinsiyet
+        self.__cinsiyet = cinsiyet
 
     def get_uyruk(self):
-        return self.uyruk
+        return self.__uyruk
 
     def set_uyruk(self, uyruk):
-        self.uyruk = uyruk
+        self.__uyruk = uyruk
 
     def __str__(self):
-        return f"Kimlik No: {self.tc_no}, Ad: {self.ad}, Soyad: {self.soyad}, Yaş: {self.yas}, Cinsiyet: {self.cinsiyet}, Uyruk: {self.uyruk}"
+        return f"Kimlik No: {self.__tc_no}, Ad: {self.__ad}, Soyad: {self.__soyad}, Yaş: {self.__yas}, Cinsiyet: {self.__cinsiyet}, Uyruk: {self.__uyruk}"
