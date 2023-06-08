@@ -6,10 +6,22 @@ class issiz(insan):
         self.__gecmis_tecrubeler = gecmis_tecrubeler
 
     def statu_bul(self):
-        katsayilar = {"Mavi Yakalı": 0.20, "Beyaz Yakalı": 0.35, "Yönetici": 0.45}
-        max_tecrube = max(self.__gecmis_tecrubeler.values())
-        uygun_statu = max(self.__gecmis_tecrubeler, key=lambda x: self.__gecmis_tecrubeler[x] * katsayilar[x])
-        return uygun_statu
+        myaka = self.__gecmis_tecrubeler.get("Mavi Yakalı")
+        byaka = self.__gecmis_tecrubeler.get("Beyaz Yakalı")
+        yonetici = self.__gecmis_tecrubeler.get("Yönetici")
+
+        myaka_etki = myaka * 0.2
+        byaka_etki = byaka * 0.35
+        yonetici_etki = yonetici * 0.45
+
+        max_etki = max(myaka_etki, byaka_etki, yonetici_etki)
+
+        if max_etki == myaka_etki:
+            return "Mavi Yakalı"
+        elif max_etki == byaka_etki:
+            return "Beyaz Yakalı"
+        else:
+            return "Yönetici"
 
     def __str__(self):
         return f"Ad: {self._insan__ad}, Soyad: {self._insan__soyad}, Uygun Statü: {self.statu_bul()}"

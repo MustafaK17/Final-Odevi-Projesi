@@ -32,15 +32,15 @@ calisan3 = calisan("45820161234", "Nazlı", "Yıldırım", 35, "Kadın", "Türk"
 
 
 #maviyaka
-maviyaka1 = maviyaka("17481275232", "Emir", "Şahin", 35, "Erkek", "Mavi Yakalı", "Türk", 36, 14500, 0.2);   maviyaka1.zam_hakki();print(maviyaka1)
-maviyaka2 = maviyaka("67418928364", "Cemile", "Lale", 28, "Kadın", "Mavi Yakalı", "Türk", 21, 12000, 0.5);  maviyaka2.zam_hakki();print(maviyaka2)
-maviyaka3 = maviyaka("12748192012", "Servet", "Sayar", 42, "Erkek", "Mavi Yakalı", "Türk", 51, 18000, 0.3); maviyaka3.zam_hakki();print(maviyaka3)
+maviyaka1 = maviyaka("17481275232", "Emir", "Şahin", 35, "Erkek", "Otomotiv", "Türk", 36, 14500, 0.2);   maviyaka1.zam_hakki();print(maviyaka1)
+maviyaka2 = maviyaka("67418928364", "Cemile", "Lale", 28, "Kadın", "Ticaret", "Türk", 21, 12000, 0.5);  maviyaka2.zam_hakki();print(maviyaka2)
+maviyaka3 = maviyaka("12748192012", "Servet", "Sayar", 42, "Erkek", "Yazılım", "Türk", 51, 18000, 0.3); maviyaka3.zam_hakki();print(maviyaka3)
 
 
 #beyazyaka
-beyazyaka1 = beyazyaka("15648520522", "Elif", "Kılıç", 33, "Kadın", "Beyaz Yakalı", "Türk", 21, 12200, 2500);  beyazyaka1.zam_hakki(); print(beyazyaka1)
-beyazyaka2 = beyazyaka("56176379112", "Mert", "Demir", 39, "Erkek", "Beyaz Yakalı", "Türk", 35, 14700, 500);   beyazyaka2.zam_hakki(); print(beyazyaka2)
-beyazyaka3 = beyazyaka("61426731232", "Emine", "Aksoy", 26, "Kadın", "Beyaz Yakalı", "Türk", 61, 22320, 3000); beyazyaka3.zam_hakki(); print(beyazyaka3)
+beyazyaka1 = beyazyaka("15648520522", "Elif", "Kılıç", 33, "Kadın", "Sağlık", "Türk", 21, 12200, 2500);  beyazyaka1.zam_hakki(); print(beyazyaka1)
+beyazyaka2 = beyazyaka("56176379112", "Mert", "Demir", 39, "Erkek", "Enerji", "Türk", 35, 14700, 500);   beyazyaka2.zam_hakki(); print(beyazyaka2)
+beyazyaka3 = beyazyaka("61426731232", "Emine", "Aksoy", 26, "Kadın", "Gıda", "Türk", 61, 22320, 3000); beyazyaka3.zam_hakki(); print(beyazyaka3)
 
 
 # Çalışan Nesnelerini DataFrame'e Dönüştürme
@@ -106,12 +106,68 @@ for beyazyaka_obj in [beyazyaka1, beyazyaka2, beyazyaka3]:
 # DataFrame Oluşturma
 df = pd.DataFrame(calisan_data + maviyaka_data + beyazyaka_data,
                   columns=["Statü", "TC no", "Ad", "Soyad", "Yaş", "Cinsiyet", "Uyruk", "Sektör", "Tecrübe(yıl)", "Maaş", "Yıpranma Payı", "Teşvik Primi", "Yeni Maaş"])
-# Boş değerleri 0 atama
+# Boş değerleri 0 atama ve indexi düzeltme
 df.fillna(0, inplace=True)
-print(df.to_string())
+df['No'] = df.index + 1
+df = df.set_index('No') # Liste numaraları indeks olarak ayarlandı
+print("\n", df.to_string())
 
+# Gruplandırma ve hesaplama
+calisan_grup = df[df['Statü'] == 'Çalışan']
+maviyaka_grup = df[df['Statü'] == 'Mavi Yaka']
+beyazyaka_grup = df[df['Statü'] == 'Beyaz Yaka']
+
+calisan_tecrube_ortalama = calisan_grup['Tecrübe(yıl)'].astype(float).mean()
+calisan_maas_ortalama = calisan_grup['Yeni Maaş'].astype(float).mean()
+
+maviyaka_tecrube_ortalama = maviyaka_grup['Tecrübe(yıl)'].astype(float).mean()
+maviyaka_maas_ortalama = maviyaka_grup['Yeni Maaş'].astype(float).mean()
+
+beyazyaka_tecrube_ortalama = beyazyaka_grup['Tecrübe(yıl)'].astype(float).mean()
+beyazyaka_maas_ortalama = beyazyaka_grup['Yeni Maaş'].astype(float).mean()
+
+# Ayların ve maaşların ortalamasını hesaplama
+print("\nÇalışanlar İçin:")
+print(f"Ortalama Tecrübe: {calisan_tecrube_ortalama:.1f} yıl")
+print(f"Ortalama Yeni Maaş: {calisan_maas_ortalama:.2f} TL")
+
+print("\nMavi Yaka İçin:")
+print(f"Ortalama Tecrübe: {maviyaka_tecrube_ortalama:.1f} yıl")
+print(f"Ortalama Yeni Maaş: {maviyaka_maas_ortalama:.2f} TL")
+
+print("\nBeyaz Yaka İçin:")
+print(f"Ortalama Tecrübe: {beyazyaka_tecrube_ortalama:.1f} yıl")
+print(f"Ortalama Yeni Maaş: {beyazyaka_maas_ortalama:.2f} TL")
+
+# Yeni maaşlara göre hesaplama
+df_siralama = df.sort_values(by='Yeni Maaş')
+df_siralama['No'] = range(1, len(df_siralama) + 1)
+df_siralama = df_siralama[['No'] + df_siralama.columns[:-1].tolist()] # No'yu düzgün sıralama
+print("\nYeni maaşa göre sıralı liste\n")
+print( df_siralama.to_string(index=False))
+
+# Tecrübesi 3 yıldan fazla olan beyaz yakalıları listeleme
+df['Tecrübe(yıl)'] = df['Tecrübe(yıl)'].astype(float)
+beyazyaka_tecrube_filtre = df[(df['Statü'] == 'Beyaz Yaka') & (df['Tecrübe(yıl)'] > 3)]
+print("\nTecrübesi 3 yıldan fazla olan beyaz yakalıların listesi\n")
+print()
+print(beyazyaka_tecrube_filtre.to_string())
+
+# Maaşı 10000TL'den fazla olanları sıralama
+yeni_maaş_filtre = df['Yeni Maaş'] > 10000
+satır_filtre = (df.index >= 2) & (df.index <= 5)
+secilen_sutunlar = ['TC no', 'Yeni Maaş']
+filtrelenmis_veri = df[yeni_maaş_filtre & satır_filtre][secilen_sutunlar]
+print("\n Maaşı 10000TL üzeri olanlar\n")
+print(filtrelenmis_veri.to_string())
+
+# İstenen son dataframe
+yeni_dataframe = df[['Ad', 'Soyad', 'Sektör', 'Yeni Maaş']]
+print("\n Basitleştirilmiş liste\n")
+print(yeni_dataframe.to_string(index=True))
 
 
 # DataFrame'i Excel'e Dönüştürme
-#df.to_excel('proje.xlsx', index=False)
+df.to_excel('proje.xlsx', index=False)
+print("\nExcel dosyası başarıyla oluşturuldu!")
 
