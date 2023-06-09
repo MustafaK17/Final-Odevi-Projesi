@@ -25,10 +25,26 @@ issizler = [issiz_1, issiz_2, issiz_3]
 for issiz in issizler:
     print(f"{issiz}")
 
+
+c1_sektor = input("Çalışan 1 için çalıştığı sektörü giriniz(Teknoloji,Muhasebe, İnşaat, Diğer): ")
+while c1_sektor not in ["Teknoloji", "Muhasebe", "İnşaat", "Diğer"]:
+    print("Lütfen geçerli bir sektör giriniz!")
+    c1_sektor = input("Çalışan 1 için çalıştığı sektörü giriniz(“Teknoloji, Muhasebe, İnşaat, Diğer” ): ")
+
+c2_sektor = input("Çalışan 2 için çalıştığı sektörü giriniz(Teknoloji,Muhasebe, İnşaat, Diğer): ")
+while c2_sektor not in ["Teknoloji", "Muhasebe", "İnşaat", "Diğer"]:
+    print("Lütfen geçerli bir sektör giriniz!")
+    c2_sektor = input("Çalışan 2 için çalıştığı sektörü giriniz(“Teknoloji, Muhasebe, İnşaat, Diğer” ): ")
+
+c3_sektor = input("Çalışan 3 için çalıştığı sektörü giriniz(Teknoloji,Muhasebe, İnşaat, Diğer): ")
+while c3_sektor not in ["Teknoloji", "Muhasebe", "İnşaat", "Diğer"]:
+    print("Lütfen geçerli bir sektör giriniz!")
+    c3_sektor = input("Çalışan 3 için çalıştığı sektörü giriniz(“Teknoloji, Muhasebe, İnşaat, Diğer” ): ")
+
 #çalışan
-calisan1 = calisan("16154181231", "Can", "Öztürk", 27, "Kadın", "Türk", "Teknoloji", 22, 18000); calisan1.zam_hakki();print(calisan1)
-calisan2 = calisan("98723622108", "Kemal", "Akgün", 32, "Erkek", "Türk", "Muhasebe", 38, 14880);  calisan2.zam_hakki();print(calisan2)
-calisan3 = calisan("45820161234", "Nazlı", "Yıldırım", 35, "Kadın", "Türk", "İnşaat", 68, 23450); calisan3.zam_hakki();print(calisan3)
+calisan1 = calisan("16154181231", "Can", "Öztürk", 27, "Kadın", "Türk", c1_sektor, 22, 18000); calisan1.zam_hakki();print(calisan1)
+calisan2 = calisan("98723622108", "Kemal", "Akgün", 32, "Erkek", "Türk", c2_sektor, 38, 14880);  calisan2.zam_hakki();print(calisan2)
+calisan3 = calisan("45820161234", "Nazlı", "Yıldırım", 35, "Kadın", "Türk", c3_sektor, 68, 23450); calisan3.zam_hakki();print(calisan3)
 
 
 #maviyaka
